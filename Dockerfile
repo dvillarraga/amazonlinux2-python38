@@ -6,3 +6,5 @@ RUN yum install -y amazon-linux-extras shadow-utils \
 RUN useradd python
 
 USER python
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
