@@ -7,4 +7,6 @@ RUN useradd python
 
 USER python
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
+COPY . /home/python
+
+ENTRYPOINT ["/home/python/docker-entrypoint.sh"]
