@@ -13,4 +13,4 @@ RUN ["chmod", "+x", "/usr/src/app/docker-entrypoint.sh"]
 
 USER python
 
-ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
+CMD ["/bin/bash"]
