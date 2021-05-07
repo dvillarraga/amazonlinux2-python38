@@ -5,8 +5,12 @@ RUN yum install -y amazon-linux-extras shadow-utils \
         && yum install -y python38
 RUN useradd python
 
+
+
+COPY . /usr/src/app
+
+RUN ["chmod", "+x", "/usr/src/app/docker-entrypoint.sh"]
+
 USER python
 
-COPY . /home/python
-
-ENTRYPOINT ["/home/python/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
